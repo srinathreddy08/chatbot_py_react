@@ -1,0 +1,210 @@
+/* Animation for the dot loading indicator */
+.dot-pulse {
+    position: relative;
+    left: -9999px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #4b5563;
+    color: #4b5563;
+    box-shadow: 9999px 0 0 -5px;
+    animation: dot-pulse 1.5s infinite linear;
+    animation-delay: 0.25s;
+  }
+  
+  .dot-pulse::before,
+  .dot-pulse::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #4b5563;
+    color: #4b5563;
+  }
+  
+  .dot-pulse::before {
+    box-shadow: 9984px 0 0 -5px;
+    animation: dot-pulse-before 1.5s infinite linear;
+    animation-delay: 0s;
+  }
+  
+  .dot-pulse::after {
+    box-shadow: 10014px 0 0 -5px;
+    animation: dot-pulse-after 1.5s infinite linear;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes dot-pulse-before {
+    0% {
+      box-shadow: 9984px 0 0 -5px;
+    }
+    30% {
+      box-shadow: 9984px 0 0 2px;
+    }
+    60%, 100% {
+      box-shadow: 9984px 0 0 -5px;
+    }
+  }
+  
+  @keyframes dot-pulse {
+    0% {
+      box-shadow: 9999px 0 0 -5px;
+    }
+    30% {
+      box-shadow: 9999px 0 0 2px;
+    }
+    60%, 100% {
+      box-shadow: 9999px 0 0 -5px;
+    }
+  }
+  
+  @keyframes dot-pulse-after {
+    0% {
+      box-shadow: 10014px 0 0 -5px;
+    }
+    30% {
+      box-shadow: 10014px 0 0 2px;
+    }
+    60%, 100% {
+      box-shadow: 10014px 0 0 -5px;
+    }
+  }
+  
+  /* Message styles */
+  .message {
+    max-width: 85%;
+    margin: 8px 0;
+    padding: 12px 16px;
+    border-radius: 12px;
+    line-height: 1.5;
+  }
+  
+  .message.user {
+    margin-left: auto;
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .message.assistant {
+    margin-right: auto;
+    background-color: #f3f4f6;
+    color: #111827;
+  }
+  
+  /* Transitions */
+  .chat-box {
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .chat-box.show {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  /* Focus styles */
+  .message-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  }
+  
+  /* Scrollbar styles */
+  .messages-container::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .messages-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .messages-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+  }
+  
+  .messages-container::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 640px) {
+    .chat-box {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+    }
+    
+    .message {
+      max-width: 90%;
+    }
+  }
+  
+  /* Button hover effects */
+  .send-button:hover {
+    background-color: #2563eb;
+  }
+  
+  .close-chat-button:hover {
+    color: #4b5563;
+  }
+
+  /* Markdown content styles */
+.markdown-content {
+    line-height: 1.5;
+  }
+  
+  .markdown-content p {
+    margin: 0;
+  }
+  
+  .markdown-content p + p {
+    margin-top: 0.5rem;
+  }
+  
+  .markdown-content code {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+  
+  .markdown-content pre {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 0.5rem 0;
+  }
+  
+  .markdown-content pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  /* Adjust code block colors for user messages */
+  .user-message .markdown-content code,
+  .user-message .markdown-content pre {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .markdown-content ul,
+  .markdown-content ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+  
+  .markdown-content li {
+    margin: 0.25rem 0;
+  }
+  
+  .markdown-content a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  
